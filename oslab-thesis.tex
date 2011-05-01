@@ -1,0 +1,180 @@
+\documentclass[a4paper,12pt,oneside]{book}
+%\showoutput
+
+%%\usepackage{draftwatermark}
+%%\SetWatermarkLightness{0.9}
+%%\SetWatermarkScale{1}
+%%\SetWatermarkText{DRAFT}
+
+% Προσοχή στο [cm-default], χωρίς αυτό μπορεί να μην λειτουργούν τα
+% μαθηματικά σύμβολα σε ορισμένες εγκαταστάσεις του xelatex!
+\usepackage[cm-default]{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+% Ελληνικό Hyphenation, αφαιρέστε το αν δεν έχετε εγκατεστημένο το xgreek.
+\usepackage{xgreek}
+
+% Γραμματοσειρά
+\setmainfont[Mapping=tex-text]{DejaVu LGC Sans}
+
+\usepackage{endnotes}
+\usepackage{fancybox}
+\usepackage{appendix}
+\usepackage{acronym}
+%\usepackage{setspace}
+%\usepackage[vcentering,right=40mm,top=20mm,left=40mm]{geometry}
+%\usepackage[a4paper]{geometry}
+%\usepackage[font=footnotesize, center]{caption}
+\usepackage{tikz}
+%\usepackage{fancyhdr}
+\usepackage{verbatim}
+\usepackage{listings}
+%\usepackage{pstricks}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{nomencl}
+%\usepackage{pslatex}
+\usepackage{listings}
+\usepackage{color}
+%\usepackage{textcomp}
+%\usepackage{makeidx}
+\usepackage{tocloft}
+%\renewcommand{\baselinestretch}{1.5}
+%\setlength{\headheight}{15pt}
+\usetikzlibrary{arrows,trees}
+\DeclareGraphicsExtensions{.jpg,.png}
+%\renewcommand{\chaptername}{}
+%\renewcommand{\thechapter}{}
+\lstset{
+        language=[Visual]C++,
+        keywordstyle=\bfseries\ttfamily\color[rgb]{0,0,1},
+        identifierstyle=\ttfamily,
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\ttfamily\color[rgb]{0.627,0.126,0.941},
+        showstringspaces=false,
+        basicstyle=\small,
+        tabsize=2,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        breakatwhitespace=false,
+        aboveskip={1.5\baselineskip},
+  columns=fixed,
+%  upquote=true,
+  extendedchars=true,
+ frame=single,
+ escapeinside={(*@}{@*)},
+}
+% The text should be double-spaced, with a 40 mm margin on the left-hand side of the pages and 20 mm top and bottom margins.
+\usepackage{setspace}
+\doublespacing
+%\setlength{\hoffset}{-1in}
+%\setlength{\voffset}{-1in}
+%\addtolength{\textheight}{20mm}
+\addtolength{\hoffset}{-1in}
+\addtolength{\hoffset}{20mm}
+\addtolength{\voffset}{5mm}
+\addtolength{\voffset}{-1in}
+\oddsidemargin=20mm
+\topmargin=5mm
+\headheight=5mm
+\headsep=5mm
+\textheight=257mm
+\textwidth=130mm
+\marginparsep=20mm
+\marginparwidth=20mm
+\footskip=10mm
+%\renewcommand{\headrulewidth}{1pt}
+%\renewcommand{\footrulewidth}{1pt}
+%\addtolength{\headheight}{0pt}
+%\fancyfoot[L]{Thesis title}
+%\fancyfoot[RO]{FirstName LastName}
+%\addtolength{\textheight}{70pt}
+%\setlength{\marginparwidth}{40mm}
+%\usepackage{layout}
+
+
+\usepackage{hyperref}
+%\usepackage{breakurl}
+\hypersetup{
+	pdftitle={Thesis Title},
+	pdfauthor={Student Name},
+	pdfsubject={Thesis Subject},
+	baseurl={http://oslab.teipir.gr},
+	pdfdisplaydoctitle={true},
+	pdffitwindow={false},
+	pdfkeywords={oslab thesis, thesis template},
+	pdfprintscaling={None},
+	pdfpagelayout={TwoPageLeft},
+	setpagesize={true},
+}
+\usepackage{hyperxmp}
+
+%\makenomenclature
+%\makeindex
+
+\begin{document}
+%\layout
+
+\frontmatter
+\input{extra/cover}
+\clearpage
+\input{extra/declaration}
+\clearpage
+\input{extra/abstract}
+\input{extra/frontmatter}
+
+%\pagestyle{headings}
+
+\mainmatter
+\setcounter{page}{1}
+\chapter{Πρόλογος}
+\input{chapters/introduction}
+\chapter{Γλώσσα}
+\input{chapters/language}
+\chapter{Δομή}
+\input{chapters/structure}
+\chapter{Στύλ}
+\input{chapters/style}
+%\addtocontents{toc}{\protect\newpage}
+\chapter{Η ιδέα (σύλληψη)}
+\input{chapters/idea}
+\chapter{Στοιχεία Κειμένου}
+\input{chapters/elements}
+\chapter{Γραμματοσειρά}
+\input{chapters/font}
+\chapter{Η Τελική Επεξεργασία}
+\input{chapters/final}
+\chapter{Το σύστημα στοιχειοθεσίας}
+\input{chapters/typesetting}
+\chapter{Επιστημονική Προσέγγιση}
+\input{chapters/scientific}
+\chapter{Αξιολόγηση}
+\input{chapters/evaluation}
+
+\backmatter
+
+\bibliographystyle{ieeetr}
+\nocite{*}
+\bibliography{extra/books}
+
+\theendnotes
+
+%\appendix
+%\chapter{Appendix A. Listings}
+%\input{extra/listings}
+%\chapter{Appendix B. Interim Report}
+%\input{extra/interim_report}
+
+%\appendix
+%\chapter*{Appendix A. Listings}
+%\input{extra/listings}
+
+%\label{appb}
+%\lhead{Appendix B. \emph{Interim Report}}
+%\input{extra/interim_report}
+
+
+\input{extra/mentor_report}
+%\printindex
+
+\end{document}
